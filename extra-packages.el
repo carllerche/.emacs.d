@@ -6,8 +6,12 @@
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
 
+;; Setting up auto-complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat dotfiles-dir "/extra-packages/auto-complete/ac-dict"))
 (ac-config-default)
 
+;; Setting up ac-slime
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
 (provide 'extra-packages)
