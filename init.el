@@ -62,6 +62,9 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
+;; Load up the extra packages
+(require 'extra-packages)
+
 (regen-autoloads)
 (load custom-file 'noerror)
 
@@ -75,5 +78,14 @@
 (if (file-exists-p user-specific-config) (load user-specific-config))
 (if (file-exists-p user-specific-dir)
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
+
+;; Use lusty file opening by default
+(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+
+;; No auth save files kthx
+(setq auto-save-mode nil)
+
+;; Use clojure as the lisp program
+(setq inferior-lisp-program "lein repl")
 
 ;;; init.el ends here
