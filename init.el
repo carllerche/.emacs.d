@@ -52,6 +52,9 @@
 
 ;; Load up starter kit customizations
 
+;; Load up the extra packages
+(require 'extra-packages)
+
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
 (require 'starter-kit-misc)
@@ -61,9 +64,6 @@
 (require 'starter-kit-perl)
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
-
-;; Load up the extra packages
-(require 'extra-packages)
 
 (regen-autoloads)
 (load custom-file 'noerror)

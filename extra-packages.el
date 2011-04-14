@@ -15,3 +15,10 @@
 (require 'ac-slime)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (provide 'extra-packages)
+
+;; Require clojure-mode
+(require 'clojure-mode)
+(require 'clojure-test-mode)
+
+;; Require align-cljlet
+(require 'align-cljlet)
