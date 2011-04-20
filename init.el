@@ -88,4 +88,6 @@
 ;; Use clojure as the lisp program
 (setq inferior-lisp-program "lein repl")
 
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
 ;;; init.el ends here
