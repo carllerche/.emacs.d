@@ -81,6 +81,7 @@
 
 ;; Use lusty file opening by default
 (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+(global-set-key (kbd "C-x C-b") 'lusty-buffer-explorer)
 
 ;; No auth save files kthx
 (setq auto-save-mode nil)
@@ -90,4 +91,14 @@
 
 (when (fboundp 'winner-mode)
   (winner-mode 1))
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
 ;;; init.el ends here
+
+;; Tweak clojure indenting
+(eval-after-load 'clojure-mode
+  '(progn
+     (put 'defupstream 'clojure-backtracking-indent '((2)))
+     (define-clojure-indent
+       (defupstream 'defun))))
