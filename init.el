@@ -99,6 +99,6 @@
 ;; Tweak clojure indenting
 (eval-after-load 'clojure-mode
   '(progn
-     (put 'defupstream 'clojure-backtracking-indent '((2)))
+     (put 'defstream 'clojure-backtracking-indent '((2)))
      (define-clojure-indent
-       (defupstream 'defun))))
+       (defstream 'defun))))
