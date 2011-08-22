@@ -92,6 +92,9 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+(setq scroll-step           1
+      scroll-conservatively 10000)
+
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
 ;;; init.el ends here
