@@ -52,6 +52,9 @@
 
 ;; Load up starter kit customizations
 
+;; Load up the extra packages
+(require 'extra-packages)
+
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
 (require 'starter-kit-misc)
@@ -76,4 +79,29 @@
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 
+;; Use lusty file opening by default
+(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+(global-set-key (kbd "C-x C-b") 'lusty-buffer-explorer)
+
+;; No auth save files kthx
+(setq auto-save-mode nil)
+
+;; Use clojure as the lisp program
+(setq inferior-lisp-program "lein repl")
+
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
+(setq scroll-step           1
+      scroll-conservatively 10000)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
 ;;; init.el ends here
+
+;; Tweak clojure indenting
+(eval-after-load 'clojure-mode
+  '(progn
+     (put 'defstream 'clojure-backtracking-indent '((2)))
+     (define-clojure-indent
+       (defstream 'defun))))

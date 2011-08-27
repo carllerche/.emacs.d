@@ -11,7 +11,10 @@
                                    'yaml-mode
                                    'find-file-in-project
                                    'magit
-                                   'gist)
+                                   'gist
+                                   'slime
+                                   'slime-repl
+                                   'lusty-explorer)
   "Libraries that should be installed by default.")
 
 (defun starter-kit-elpa-install ()
