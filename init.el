@@ -103,5 +103,7 @@
 (eval-after-load 'clojure-mode
   '(progn
      (put 'defstream 'clojure-backtracking-indent '((2)))
+     (put 'doasync 'clojure-backtracking-indent '((2)))
      (define-clojure-indent
-       (defstream 'defun))))
+       (defstream 'defun)
+       (doasync 'defun))))
