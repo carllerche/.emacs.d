@@ -1,3 +1,6 @@
 [submodule "vendor/lusty-emacs"]
 	path = vendor/lusty-emacs
 	url = https://github.com/sjbach/lusty-emacs.git
+[submodule "vendor/auto-complete"]
+	path = vendor/auto-complete
+	url = https://github.com/m2ym/auto-complete.git
