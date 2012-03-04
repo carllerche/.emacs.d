@@ -1,0 +1,3 @@
+[submodule "vendor/lusty-emacs"]
+	path = vendor/lusty-emacs
+	url = https://github.com/sjbach/lusty-emacs.git
