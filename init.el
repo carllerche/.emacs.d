@@ -20,6 +20,7 @@
 ;; Add vendored plugins to load path
 (setq load-path (cons "~/.emacs.d/vendor/lusty-emacs" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/auto-complete" load-path))
+(setq load-path (cons "~/.emacs.d/vendor/ac-slime" load-path))
 
 ;; Require vendored plugins
 (require 'lusty-explorer)
@@ -35,10 +36,15 @@
   ;; Store the completion history in the cache directory
   (setq ac-comphist-file "~/.emacs.cache/ac-comphist.data")
 
+  (ac-set-trigger-key "TAB")
+
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
   ;; Enable auto-complete globally
   (global-auto-complete-mode t))
+
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 ;; No auth save files kthx
 (setq auto-save-mode nil)
