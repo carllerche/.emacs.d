@@ -57,3 +57,13 @@
 
 ;; My custom font
 (set-frame-font "Inconsolata-13")
+
+
+;; Tweak indenting
+(eval-after-load 'clojure-mode
+  '(progn
+     (put 'doasync 'clojure-backtracking-indent '((2)))
+     (put 'receive 'clojure-backtracking-indent '((2)))
+     (define-clojure-indent
+       (doasync 'defun)
+       (receive 'defun))))
